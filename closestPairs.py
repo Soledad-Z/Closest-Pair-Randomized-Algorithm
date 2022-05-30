@@ -19,7 +19,7 @@ class Grid:
         self.pos = pos  # Coordinates of the lower left corner of the grid
         self.d = d  # Side length of the grid
 
-    def isInSquare(self, point: Point):
+    def isInGrid(self, point: Point):
         """
         check if the point in this grid
         :param point: the point to be checked
@@ -75,7 +75,7 @@ def make_grids(points: List[Point], theta) -> Tuple[Dict[int, List[Point]], Tupl
 
     for p in points:
         for idx, s in enumerate(grid_list):
-            if s.isInSquare(p):
+            if s.isInGrid(p):
                 hash_map[idx].append(p)
 
     return hash_map, (num_x, num_y)
